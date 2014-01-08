@@ -19,7 +19,10 @@ libraryDependencies ++= {
     "io.spray"            %   "spray-testkit" % sprayV,
     "com.typesafe.akka"   %%  "akka-actor"    % akkaV,
     "com.typesafe.akka"   %%  "akka-testkit"  % akkaV,
-    "org.specs2"          %%  "specs2"        % "2.2.3" % "test"
+    "org.specs2"          %%  "specs2"        % "2.2.3" % "test",
+    "com.github.nscala-time" %% "nscala-time" % "0.6.0",
+    "org.mongodb" %% "casbah" % "2.6.3",
+    "org.scalatest" % "scalatest_2.10" % "2.0" % "test"
   )
 }
 

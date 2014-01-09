@@ -12,12 +12,13 @@ import com.mongodb.casbah.commons.MongoDBObject
 
 abstract class UserEvent
 
-case class MousePointerLocationReported(userId: Id[RegisteredUser], time: DateTime, pointer: Location) extends UserEvent
+case class MousePointerLocationReported(userId: Id[RegisteredUser], sessionId: Id[Session], time: DateTime, pointer: Location) extends UserEvent
 
 object MongoDbConversions {
   implicit val MousePointerLocationReportedToDbObject: MousePointerLocationReported=>DBObject = l => {
     MongoDBObject(
       "userId"-> l.userId,
+      "sessionId"->l.sessionId,
       "time" -> l.time.toDate,
       "x" -> l.pointer.x,
       "y" -> l.pointer.y

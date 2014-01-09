@@ -21,7 +21,7 @@ class UserEventActorTest extends FlatSpec with MustMatchers {
   val eventsActor = system.actorOf(Props[UserEventActor])
 
   "A user events actor" should "process an mouse position message and save it to MDB" in {
-    val message = MousePointerLocationReported(Id[RegisteredUser]("qwerty"), DateTime.now(), Location(1,2))
+    val message = MousePointerLocationReported(Id[RegisteredUser]("qwerty"), Id[Session]("qwerty"), DateTime.now(), Location(1,2))
 
     eventsActor ! message
 

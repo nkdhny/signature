@@ -8,3 +8,5 @@ package ru.nkdhny.signature.model
 abstract class User
 
 case class RegisteredUser(id: Id[RegisteredUser]) extends User
+
+trait Session

@@ -2,7 +2,6 @@ package ru.nkdhny.signature.routing
 
 import akka.actor.Actor
 import spray.routing._
-import spray.http._
 import directives._
 import ru.nkdhny.signature.model.{Location, MousePointerLocationReported}
 import com.github.nscala_time.time.Imports.{DateTime => Time}

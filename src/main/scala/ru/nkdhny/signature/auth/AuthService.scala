@@ -19,4 +19,8 @@ trait AuthService {
 
 }
 
+object AuthService {
+  class WrongLoginOrPasswordException extends Exception
+}
+
 

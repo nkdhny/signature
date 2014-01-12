@@ -1,8 +1,7 @@
 package ru.nkdhny.signature.model
 
 import com.github.nscala_time.time.Imports._
-import com.mongodb.DBObject
-import com.mongodb.casbah.commons.MongoDBObject
+import com.mongodb.casbah.Imports._
 
 /**
  * User: alexey
@@ -14,12 +13,12 @@ abstract class UserEvent
 
 case class MousePointerLocationReported(userId: Id[RegisteredUser], sessionId: Id[Session], time: DateTime, pointer: Location) extends UserEvent
 
-object MongoDbConversions {
-  implicit val MousePointerLocationReportedToDbObject: MousePointerLocationReported=>DBObject = l => {
+object MousePointerLocationReported {
+  implicit val mplRDbView: MousePointerLocationReported=>DBObject = l => {
     MongoDBObject(
       "userId"-> l.userId,
       "sessionId"->l.sessionId,
-      "time" -> l.time.toDate,
+      "time" -> l.time,
       "x" -> l.pointer.x,
       "y" -> l.pointer.y
     )

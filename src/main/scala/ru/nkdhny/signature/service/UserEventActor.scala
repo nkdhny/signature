@@ -3,7 +3,7 @@ package ru.nkdhny.signature.service
 import akka.actor.Actor
 
 import ru.nkdhny.signature.model.MousePointerLocationReported
-import ru.nkdhny.signature.model.MongoDbConversions._
+
 
 
 /**

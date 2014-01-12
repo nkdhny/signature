@@ -4,7 +4,7 @@ import spray.routing._
 import spray.routing.Directives._
 import ru.nkdhny.signature.service.WithConfig
 import ru.nkdhny.signature.model.{Session, RegisteredUser, Id}
-import ru.nkdhny.signature.auth.{AuthService, WithStubbingAuth}
+import ru.nkdhny.signature.auth.{WithMongoDBAuth, AuthService}
 
 /**
  * User: alexey
@@ -30,6 +30,6 @@ trait ValidSessionDirective extends WithConfig {
   }
 }
 
-package object directives extends ValidSessionDirective with WithStubbingAuth {
+package object directives extends ValidSessionDirective with WithMongoDBAuth {
 
 }

@@ -25,6 +25,7 @@ trait MongoDBAuthService extends AuthService with WithConfig with WithMongo  {
 
 
   def obtainSession(name: Username, password: Password): Try[Id[Session]] = {
+
     val s  = for {
       user <- readUserByCredentials(name, password)
     } yield {
